@@ -10,11 +10,11 @@ module.exports = class GetHandler {
     const id = reqParams[2] || 0;
     ordersDB.find(id).then(
       data => res.end(JSON.stringify(data)),
-      err => {
+      (err) => {
         res.statusCode = 404;
         res.end(JSON.stringify(err));
-      }
+      },
     );
 
   }
-}
+};

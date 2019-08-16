@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class OrderService {
+export class ProductService {
   apiUrl: string = 'http://localhost:3210/products';
 
   constructor(private http: HttpClient) { }
@@ -14,5 +14,8 @@ export class OrderService {
   getAll(): Observable<any> {
     return this.http.get(this.apiUrl);
   }
+
+ 
+
 
 }

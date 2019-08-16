@@ -4,6 +4,7 @@ import { IndexComponent } from './page/index/index.component';
 import { OrderAdminComponent } from './page/order-admin/order-admin.component';
 import { ProductsComponent } from './page/products/products.component';
 import { OrderComponent } from './page/order/order.component';
+import { FishesComponent } from './products/categories/fishes/fishes.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'admin/order', component: OrderAdminComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'order', component: OrderComponent },
+  { path: 'products/fishes', component: FishesComponent },
   { path: '**', component: IndexComponent }
 ];
 
