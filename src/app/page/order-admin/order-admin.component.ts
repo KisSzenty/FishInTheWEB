@@ -11,15 +11,15 @@ import { Observable } from 'rxjs';
 export class OrderAdminComponent implements OnInit {
 
   list: Order[] = [];
-  list$: Observable<any> = this.orderService.getAll();
+  // list$: Observable<any> = this.orderService.getAll();
 
   constructor(private orderService: OrderService) { }
 
   ngOnInit() {
-    /*this.orderService.getAll().subscribe(
+    this.orderService.getAll().subscribe(
       orders => this.list = orders,
       err => console.error(err)
-    )*/
+    )
   }
 
 }

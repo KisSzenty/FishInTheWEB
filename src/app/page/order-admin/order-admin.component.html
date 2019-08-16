@@ -1,17 +1,24 @@
-<pre>{{list$ | async | json }}</pre>
-
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>asdasd</th>
-      <th>sadasda</th>
-      <th>asdasd</th>
-      <th>asdasdasd</th>
+      <th>#</th>
+      <th>Date</th>
+      <th>ProductID</th>
+      <th>User name</th>
+      <th>User email</th>
+      <th>Shipping address</th>
+      <th>Quantity</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let order of list$ | async">
-      <td></td>
+    <tr *ngFor="let order of list">
+      <td>{{ order.id }}</td>
+      <td>{{ order.insdate }}</td>
+      <td>{{ order.product }}</td>
+      <td>{{ order.userName }}</td>
+      <td>{{ order.userEmail }}</td>
+      <td>{{ order.shippingAddress }}</td>
+      <td>{{ order.quantity }}</td>
     </tr>
   </tbody>
 </table>

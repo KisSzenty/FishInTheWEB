@@ -2,9 +2,11 @@
     {
         "id": 1,
         "product": 3,
+        "category": "fish",
         "insdate": "2019-08-16",
         "userName": "Béla",
         "userEmail": "npm@gmail.com",
-        "shippingAdress": "Bp, Nagy Kálmán tér 5."
+        "shippingAddress": "Bp, Nagy Kálmán tér 5.",
+        "quantity": 1
     }
 ]
