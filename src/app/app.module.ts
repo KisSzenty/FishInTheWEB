@@ -14,6 +14,9 @@ import { OrderEditComponent } from './page/order-edit/order-edit.component';
 import { OrderAddComponent } from './page/order-add/order-add.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { FishesComponent } from './products/categories/fishes/fishes.component';
+import { ProductsAdminComponent } from './page/products-admin/products-admin.component';
+import { ProductsAddComponent } from './page/products-add/products-add.component';
+import { ProductsEditComponent } from './page/products-edit/products-edit.component';
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import { FishesComponent } from './products/categories/fishes/fishes.component';
     OrderAddComponent,
     OrderComponent,
     FilterPipe,
-    FishesComponent
+    FishesComponent,
+    ProductsAdminComponent,
+    ProductsAddComponent,
+    ProductsEditComponent
   ],
   imports: [
     BrowserModule,
