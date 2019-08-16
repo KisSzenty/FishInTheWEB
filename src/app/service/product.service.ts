@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class OrderService {
+export class ProductService {
   apiUrl: string = 'http://localhost:3210/products';
 
   constructor(private http: HttpClient) { }
