@@ -1,4 +1,21 @@
-<table class="table table-hover table-fluid">
+<div class="text-center">
+    <h1>Fish in the WEB - Admin page</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="text-center col-12">
+            <a class="btn btn-info"
+               routerLink="/admin/products/add">Új felhasználó hozzáadása</a>
+        </div>
+        <div class="text-center col-4 form-group offset-4">
+            <label for="filter">Szűrés:</label>
+            <input name="filter"
+                   type="text"
+                   class="form-control">
+        </div>
+    </div>
+</div>
+<table class="table table-hover table-fluid table-responsive text-center">
     <thead>
         <tr>
             <th scope="col">#</th>
@@ -20,7 +37,7 @@
             <td>{{ product.details }}</td>
             <td>
                 <div class="btn-group">
-                    <button class="btn btn-info">Edit</button>
+                    <button class="btn btn-secondary">Edit</button>
                     <button class="btn btn-danger">Delete</button>
                 </div>
             </td>

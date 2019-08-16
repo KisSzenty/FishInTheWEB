@@ -1,1 +1,53 @@
-<p>products-add works!</p>
+<div>&nbsp;</div>
+<div class="text-center">
+    <h1>Fish in the WEB - Admin page</h1>
+    <h2>Új felhasználó hozzáadása</h2>
+</div>
+<div>&nbsp;</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div>&nbsp;</div>
+
+            <form class="form-group text-center"
+                  action="">
+                <label for="name">Name</label>
+                <input class="form-control"
+                       id="name"
+                       name="firstName"
+                       type="text">
+                <label for="price">Price</label>
+                <input class="form-control"
+                       id="price"
+                       name="lastName"
+                       type="text">
+                <label for="category">Category</label>
+                <input class="form-control"
+                       id="category"
+                       name="age"
+                       type="text">
+                <label for="details">Details</label>
+                <textarea name="details"
+                          id="details"
+                          cols="30"
+                          rows="10"></textarea>
+                <label for="imgSource">Img source</label>
+                <input class="form-control"
+                       id="imgSource"
+                       name="imgSource"
+                       type="text">
+                <div>&nbsp;</div>
+                <div class="col-12 text-center">
+                    <button (click)="onCreate()"
+                            class="btn btn-info">Tényleg hozzáadod? :D</button>
+                </div>
+                <div>&nbsp;</div>
+                <div class="col-12 text-center">
+                    <button (click)="onNewCancel()"
+                            class="btn btn-danger">Mégsenemse</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
