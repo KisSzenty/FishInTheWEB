@@ -6,6 +6,9 @@ import { ProductsComponent } from './page/products/products.component';
 import { OrderComponent } from './page/order/order.component';
 import { OrderEditComponent } from './page/order-edit/order-edit.component';
 import { OrderAddComponent } from './page/order-add/order-add.component';
+import { ProductsAdminComponent } from './page/products-admin/products-admin.component';
+import { ProductsEditComponent } from './page/products-edit/products-edit.component';
+import { ProductsAddComponent } from './page/products-add/products-add.component';
 
 
 const routes: Routes = [
@@ -13,6 +16,9 @@ const routes: Routes = [
   { path: 'admin/order', component: OrderAdminComponent },
   { path: 'admin/order-edit', component: OrderEditComponent },
   { path: 'admin/order-add', component: OrderAddComponent },
+  { path: 'admin/products', component: ProductsAdminComponent },
+  { path: 'admin/products/add', component: ProductsAddComponent },
+  { path: 'admin/products/:id', component: ProductsEditComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'order', component: OrderComponent },
   { path: '**', component: IndexComponent }

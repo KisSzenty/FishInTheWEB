@@ -12,6 +12,9 @@ import { ProductsComponent } from './page/products/products.component';
 import { OrderComponent } from './page/order/order.component';
 import { OrderEditComponent } from './page/order-edit/order-edit.component';
 import { OrderAddComponent } from './page/order-add/order-add.component';
+import { ProductsAdminComponent } from './page/products-admin/products-admin.component';
+import { ProductsAddComponent } from './page/products-add/products-add.component';
+import { ProductsEditComponent } from './page/products-edit/products-edit.component';
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import { OrderAddComponent } from './page/order-add/order-add.component';
     ProductsComponent,
     OrderEditComponent,
     OrderAddComponent,
-    OrderComponent
+    OrderComponent,
+    ProductsAdminComponent,
+    ProductsAddComponent,
+    ProductsEditComponent
   ],
   imports: [
     BrowserModule,
