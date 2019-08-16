@@ -9,6 +9,7 @@ import { IndexComponent } from './page/index/index.component';
 import { OrderAdminComponent } from './page/order-admin/order-admin.component';
 import { NavbarComponent } from './page/navbar/navbar.component';
 import { ProductsComponent } from './page/products/products.component';
+import { OrderComponent } from './page/index/order/order.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProductsComponent } from './page/products/products.component';
     IndexComponent,
     OrderAdminComponent,
     NavbarComponent,
-    ProductsComponent
+    ProductsComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
