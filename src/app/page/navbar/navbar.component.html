@@ -1,23 +1,38 @@
 <nav class="navbar navbar-expand-sm navbar-light bg-light">
-  <a class="navbar-brand" routerLink="/">
+  <a class="navbar-brand"
+     routerLink="/">
     <fa-icon [icon]="faFish"></fa-icon>
   </a>
-  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler d-lg-none"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavId">
+  <div class="collapse navbar-collapse"
+       id="collapsibleNavId">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link"
+           routerLink="/">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/admin/order">Orders</a>
+        <a class="nav-link"
+           routerLink="/order">Order</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/products">Products</a>
+        <a class="nav-link"
+           routerLink="/products">Products</a>
       </li>
-
+      <li class="nav-item"
+          id="navkey">
+        <a class="nav-link"
+           routerLink="/"><img
+               src="https://img.icons8.com/material/24/000000/key--v1.png"></a>
+      </li>
     </ul>
 
   </div>
