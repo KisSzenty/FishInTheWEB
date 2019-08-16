@@ -4,6 +4,7 @@ import { IndexComponent } from './page/index/index.component';
 import { OrderAdminComponent } from './page/order-admin/order-admin.component';
 import { ProductsComponent } from './page/products/products.component';
 import { OrderComponent } from './page/order/order.component';
+import { FishesComponent } from './products/categories/fishes/fishes.component';
 import { OrderEditComponent } from './page/order-edit/order-edit.component';
 import { OrderAddComponent } from './page/order-add/order-add.component';
 import { ProductsAdminComponent } from './page/products-admin/products-admin.component';
@@ -14,13 +15,14 @@ import { ProductsAddComponent } from './page/products-add/products-add.component
 const routes: Routes = [
   { path: '', component: IndexComponent },
   { path: 'admin/order', component: OrderAdminComponent },
-  { path: 'admin/order-edit', component: OrderEditComponent },
-  { path: 'admin/order-add', component: OrderAddComponent },
+  { path: 'admin/order/:id', component: OrderEditComponent },
+  { path: 'admin/order/add', component: OrderAddComponent },
   { path: 'admin/products', component: ProductsAdminComponent },
   { path: 'admin/products/add', component: ProductsAddComponent },
   { path: 'admin/products/:id', component: ProductsEditComponent },
   { path: 'products', component: ProductsComponent },
   { path: 'order', component: OrderComponent },
+  { path: 'products/fishes', component: FishesComponent },
   { path: '**', component: IndexComponent }
 ];
 
