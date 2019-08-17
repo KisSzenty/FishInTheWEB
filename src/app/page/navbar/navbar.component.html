@@ -1,53 +1,46 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand"
-     routerLink="/">
-    <fa-icon [icon]="faFish"
-             style="color:darkblue"></fa-icon>
+  <a class="navbar-brand" routerLink="/">
+    <fa-icon [icon]="faFish" style="color:darkblue"></fa-icon>
   </a>
-  <button class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse"
-       id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link"
-           routerLink="/">Home</a>
+        <a class="nav-link" routerLink="/">Home</a>
       </li>
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Products
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" routerLink="/products/fishes">Fishes</a>
+            <a class="dropdown-item" routerLink="/products/plants">Plants</a>
+            <a class="dropdown-item" routerLink="/products/corals">Corals</a>
+            <a class="dropdown-item" routerLink="/products/tools">Tools</a>
+            <a class="dropdown-item" routerLink="/products/aquariums">Aquariums</a>
+          </div>
+        </li>
+      </ul>
       <li class="nav-item">
-        <a class="nav-link"
-           routerLink="/products">Products</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"
-           routerLink="/order">Orders</a>
+        <a class="nav-link" routerLink="/order">Order</a>
       </li>
     </ul>
     <ul class="navbar-nav">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle"
-           id="navbarDropdown"
-           role="button"
-           data-toggle="dropdown"
-           aria-haspopup="true"
-           aria-expanded="false">
-          <fa-icon [icon]="['fas', 'key']"
-                   style="color:darkblue"></fa-icon>&nbsp;
+        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+          <fa-icon [icon]="['fas', 'key']" style="color:darkblue"></fa-icon>&nbsp;
           Don't touch this
         </a>
-        <div class="dropdown-menu"
-             aria-labelledby="navbarDropdown">
-          <a class="dropdown-item"
-             routerLink="/admin/order">Orders</a>
-          <a class="dropdown-item"
-             routerLink="/admin/products">Products</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" routerLink="/admin/order">Orders</a>
+          <a class="dropdown-item" routerLink="/admin/products">Products</a>
         </div>
       </li>
       <li class="nav-item">

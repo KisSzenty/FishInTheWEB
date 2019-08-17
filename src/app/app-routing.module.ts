@@ -10,6 +10,11 @@ import { OrderAddComponent } from './page/order-add/order-add.component';
 import { ProductsAdminComponent } from './page/products-admin/products-admin.component';
 import { ProductsEditComponent } from './page/products-edit/products-edit.component';
 import { ProductsAddComponent } from './page/products-add/products-add.component';
+import { PlantsComponent } from './products/categories/plants/plants.component';
+import { CoralsComponent } from './products/categories/corals/corals.component';
+import { ToolsComponent } from './products/categories/tools/tools.component';
+import { AquariumsComponent } from './products/categories/aquariums/aquariums.component';
+import { Order } from './model/order';
 
 
 const routes: Routes = [
@@ -21,8 +26,12 @@ const routes: Routes = [
   { path: 'admin/products/add', component: ProductsAddComponent },
   { path: 'admin/products/:id', component: ProductsEditComponent },
   { path: 'products', component: ProductsComponent },
-  { path: 'order', component: OrderComponent },
+  { path: 'order/:id', component: OrderComponent },
   { path: 'products/fishes', component: FishesComponent },
+  { path: 'products/plants', component: PlantsComponent },
+  { path: 'products/corals', component: CoralsComponent },
+  { path: 'products/tools', component: ToolsComponent },
+  { path: 'products/aquariums', component: AquariumsComponent },
   { path: '**', component: IndexComponent }
 ];
 
