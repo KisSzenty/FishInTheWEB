@@ -1,4 +1,5 @@
-<div class="container-fluid mt-5">
+<h1 class="text-center">Fishes</h1>
+<div class="container-fluid mt-5 text-center">
   <div class="row">
     <div class="col-4 mb-5" *ngFor="let product of productList |filter:'fishes'">
       <div class="card bg-dark" style="width: 18rem;">
@@ -6,7 +7,7 @@
         <div class="card-body">
           <h4 class="card-title">{{product.name}}</h4>
           <p class="card-text">{{product.details1}}</p>
-          <a href="#" class="btn btn-primary">Order</a>
+           <a href="#" routerLink="/order/{{product.id}}" class="btn btn-primary">Order</a>
         </div>
       </div>
     </div>

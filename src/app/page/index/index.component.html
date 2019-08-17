@@ -1,1 +1,47 @@
 <h1>És lőn szopóálarc :D</h1>
+<div class="container">
+  <div class="row">
+    <div class="card-group text-center">
+      <div class="card mr-4 bg-light">
+        <img class="card-img-top" data-src="{{productList[2].img}}" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">Fishes</h4>
+          <p class="card-text">We have {{productNum('fishes')}} fish offers.</p>
+          <button class="btn btn-dark" routerLink="/products/fishes">Go!</button>
+        </div>
+      </div>
+      <div class="card mr-4 bg-secondary">
+        <img class="card-img-top" data-src="{{productList[7].img}}" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">Plants</h4>
+          <p class="card-text">We have {{productNum('plants')}} plant offers.</p>
+          <button class="btn btn-info" routerLink="/products/plants">Go! </button>
+        </div>
+      </div>
+      <div class="card mr-4 bg-info">
+        <img class="card-img-top" data-src="{{productList[13].img}}" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">Corals</h4>
+          <p class="card-text">We have {{productNum('corals')}} coral offers.</p>
+          <button class="btn btn-primary" routerLink="/products/corals">Go!</button>
+        </div>
+      </div>
+      <div class="card mr-4 bg-dark">
+        <img class="card-img-top" data-src="{{productList[14].img}}" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">Tools</h4>
+          <p class="card-text">We have {{productNum('tools')}} tool offers.</p>
+          <button class="btn btn-light" routerLink="/products/tools">Go!</button>
+        </div>
+      </div>
+      <div class="card aquarium">
+        <img class="card-img-top" data-src="{{productList[17].img}}" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title">Aquariums</h4>
+          <p class="card-text">We have {{productNum('aquariums')}} aquarium offers.</p>
+          <button class="btn btn-secondary" routerLink="/products/aquariums">Go!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
