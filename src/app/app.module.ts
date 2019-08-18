@@ -25,6 +25,7 @@ import { PlantsComponent } from './products/categories/plants/plants.component';
 import { CoralsComponent } from './products/categories/corals/corals.component';
 import { ToolsComponent } from './products/categories/tools/tools.component';
 import { AquariumsComponent } from './products/categories/aquariums/aquariums.component';
+import { ProductInfoComponent } from './page/product-info/product-info.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { AquariumsComponent } from './products/categories/aquariums/aquariums.co
     PlantsComponent,
     CoralsComponent,
     ToolsComponent,
-    AquariumsComponent
+    AquariumsComponent,
+    ProductInfoComponent
   ],
   imports: [
     BrowserModule,

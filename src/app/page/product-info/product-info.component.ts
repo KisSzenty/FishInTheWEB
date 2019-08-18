@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { Order } from 'src/app/model/order';
 import { ActivatedRoute } from '@angular/router';
@@ -6,34 +7,29 @@ import { ProductService } from 'src/app/service/product.service';
 import { Product } from 'src/app/model/product';
 
 @Component({
-  selector: 'app-order',
-  templateUrl: './order.component.html',
-  styleUrls: ['./order.component.css']
+  selector: 'app-product-info',
+  templateUrl: './product-info.component.html',
+  styleUrls: ['./product-info.component.css']
 })
-export class OrderComponent implements OnInit {
-  newOrder: Order = new Order();
-  order: Order = new Order();
-  product: Product = new Product;
+export class ProductInfoComponent implements OnInit {
+
+  product;
+  productList: Product[] = [];
   orderList: Order[] = [];
   constructor(
     private ar: ActivatedRoute,
     private productService: ProductService,
     private orderService: OrderService
   ) {
-  }
-
-  ngOnInit() {
     this.ar.params.forEach(
       params => {
         this.getOneProduct(params.id)
+        console.log(this.product)
       }
     );
-    this.orderService.getAll().subscribe(
-      orders => {
+  }
 
-        this.orderList = orders
-        console.log(this.orderList)
-      })
+  ngOnInit() {
   }
 
   getOneProduct(id: number) {
@@ -43,14 +39,6 @@ export class OrderComponent implements OnInit {
       },
     )
   }
-  onAdd() {
-    this.newOrder.product = this.product.id,
-      this.newOrder.category = this.product.category,
-      console.log(this.newOrder)
-    this.orderService.create(this.newOrder).subscribe(
-      order => {
-        this.orderList.push(order)
-      }
-    )
-  }
+
+
 }
