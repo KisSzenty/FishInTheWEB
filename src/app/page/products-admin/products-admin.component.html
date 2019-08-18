@@ -5,10 +5,10 @@
     <div class="row">
         <div class="text-center col-12">
             <a class="btn btn-info"
-               routerLink="/admin/products/add">Új felhasználó hozzáadása</a>
+               routerLink="/admin/products/add">Add new product</a>
         </div>
         <div class="text-center col-4 form-group offset-4">
-            <label for="filter">Szűrés:</label>
+            <label for="filter">Filter:</label>
             <input name="filter"
                    type="text"
                    class="form-control">
@@ -37,7 +37,8 @@
             <td>{{ product.details }}</td>
             <td>
                 <div class="btn-group">
-                    <button class="btn btn-secondary">Edit</button>
+                    <button class="btn btn-secondary"
+                            routerLink="/admin/edit/{{product.id}}">Edit</button>
                     <button class="btn btn-danger">Delete</button>
                 </div>
             </td>

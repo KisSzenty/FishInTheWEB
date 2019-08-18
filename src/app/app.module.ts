@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import {  FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './page/index/index.component';
@@ -17,6 +17,12 @@ import { FishesComponent } from './products/categories/fishes/fishes.component';
 import { ProductsAdminComponent } from './page/products-admin/products-admin.component';
 import { ProductsAddComponent } from './page/products-add/products-add.component';
 import { ProductsEditComponent } from './page/products-edit/products-edit.component';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faKey } from '@fortawesome/free-solid-svg-icons';
+import { PlantsComponent } from './products/categories/plants/plants.component';
+import { CoralsComponent } from './products/categories/corals/corals.component';
+import { ToolsComponent } from './products/categories/tools/tools.component';
+import { AquariumsComponent } from './products/categories/aquariums/aquariums.component';
 
 
 @NgModule({
@@ -33,15 +39,24 @@ import { ProductsEditComponent } from './page/products-edit/products-edit.compon
     FishesComponent,
     ProductsAdminComponent,
     ProductsAddComponent,
-    ProductsEditComponent
+    ProductsEditComponent,
+    PlantsComponent,
+    CoralsComponent,
+    ToolsComponent,
+    AquariumsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    library.add(faKey);
+  }
+}

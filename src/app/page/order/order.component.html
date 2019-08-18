@@ -1,1 +1,36 @@
-<p>order works!</p>
+<h1 class="mt-5 mb-5 text-center">Order</h1>
+<form class="text-center"  action="">
+  <div class="form-group">
+    <div class="col-6 offset-3">
+      <label for="">
+        <h4>Username</h4>
+      </label>
+      <input name="name" [(ngModel)]="newOrder.userName" type="text" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-6 offset-3">
+      <label for="">
+        <h4>Email</h4>
+      </label>
+      <input name="email" [(ngModel)]="newOrder.userEmail" type="email" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-6 offset-3">
+      <label for="">
+        <h4>Shipping Address</h4>
+      </label>
+      <input name="shippingAddress" [(ngModel)]="newOrder.shippingAddress" type="text" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-6 offset-3">
+      <label for="">
+        <h4>Quantity</h4>
+      </label>
+      <input name="quantity" [(ngModel)]="newOrder.quantity" type="number" class="form-control">
+    </div>
+  </div>
+  <button class="btn btn-secondary" (click)="onAdd()">Order</button>
+</form>
