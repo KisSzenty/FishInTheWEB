@@ -26,6 +26,7 @@ import { CoralsComponent } from './products/categories/corals/corals.component';
 import { ToolsComponent } from './products/categories/tools/tools.component';
 import { AquariumsComponent } from './products/categories/aquariums/aquariums.component';
 import { ProductInfoComponent } from './page/product-info/product-info.component';
+import { SearchPipe } from './pipe/search.pipe';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { ProductInfoComponent } from './page/product-info/product-info.component
     CoralsComponent,
     ToolsComponent,
     AquariumsComponent,
-    ProductInfoComponent
+    ProductInfoComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
