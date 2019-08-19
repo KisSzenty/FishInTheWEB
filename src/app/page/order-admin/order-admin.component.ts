@@ -19,7 +19,6 @@ export class OrderAdminComponent implements OnInit {
   productList: Product[] = [];
   // list$: Observable<any> = this.orderService.getAll();
   allOrders: number;
-  categoryArr: string[];
   fishes: number;
   corals: number;
   plants: number;
@@ -46,12 +45,11 @@ export class OrderAdminComponent implements OnInit {
       orders => {
         this.list = orders;
         this.allOrders = this.countOrders(orders);
-        this.categoryArr = this.getCategories(orders);
-        this.fishes = this.countCategories(this.categoryArr, "fishes");
-        this.corals = this.countCategories(this.categoryArr, "corals");
-        this.tools = this.countCategories(this.categoryArr, "tools");
-        this.plants = this.countCategories(this.categoryArr, "plants");
-        this.aquariums = this.countCategories(this.categoryArr, "aquariums");
+        this.fishes = this.countCategories(orders, "fishes");
+        this.corals = this.countCategories(orders, "corals");
+        this.tools = this.countCategories(orders, "tools");
+        this.plants = this.countCategories(orders, "plants");
+        this.aquariums = this.countCategories(orders, "aquariums");
         this.fishesP = this.percentage(orders, this.fishes);
         this.coralsP = this.percentage(orders, this.corals);
         this.toolsP = this.percentage(orders, this.tools);
@@ -62,36 +60,19 @@ export class OrderAdminComponent implements OnInit {
     )
   }
 
-  // getProducts() {
-  //   this.productService.getAll().subscribe(
-  //     products => this.productList = products,
-  //     err => console.error(err)
-  //   )
-  // }
 
   countOrders(orders: Order[]) {
     return orders.length;
   }
 
-  getCategories(orders: Order[]) {
-    let arr = [];
-    for (let i = 0; i < orders.length; i++) {
-      for (let k = 0; k < this.productList.length; k++) {
-        if (orders[i].product == this.productList[k].id) {
-          arr.push(this.productList[k].category);
-        }
-      }
-    }
-    return arr;
-  }
 
-  countCategories(catArr: string[], cat: string) {
+  countCategories(orders: Order[], cat: string) {
     let num: number = 0;
-    for (let i = 0; i < catArr.length; i++) {
-      if (catArr[i] == cat) {
-        num++;
-      }
-    }
+   for (let i = 0; i < orders.length; i++){
+     if (orders[i].category == cat){
+       num = num+orders[i].quantity;
+     }
+   }
     return num;
   }
 

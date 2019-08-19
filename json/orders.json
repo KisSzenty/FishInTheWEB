@@ -1,6 +1,7 @@
 [{
     "id": 1,
     "product": 3,
+    "category": "fishes",
     "insdate": "2019-08-16",
     "userName": "Béla",
     "userEmail": "npm@gmail.com",
@@ -10,6 +11,7 @@
   {
     "id": 2,
     "product": 20,
+    "category": "plants",
     "insdate": "2019-08-16",
     "userName": "Gabi",
     "userEmail": "npm@gmail.com",
@@ -19,6 +21,7 @@
   {
     "id": 3,
     "product": 8,
+    "category": "plants",
     "insdate": "2019-08-16",
     "userName": "Gabi",
     "userEmail": "npm@gmail.com",
@@ -28,6 +31,7 @@
   {
     "id": 4,
     "product": 6,
+    "category": "plants",
     "insdate": "2019-08-16",
     "userName": "Gabi",
     "userEmail": "npm@gmail.com",
@@ -37,6 +41,7 @@
   {
     "id": 5,
     "product": 15,
+    "category": "tools",
     "insdate": "2019-08-16",
     "userName": "Gabi",
     "userEmail": "npm@gmail.com",
@@ -46,6 +51,7 @@
   {
     "id": 6,
     "product": 9,
+    "category": "tools",
     "insdate": "2019-08-16",
     "userName": "Gabi",
     "userEmail": "npm@gmail.com",
@@ -55,6 +61,7 @@
   {
     "id": 7,
     "product": 6,
+    "category": "plants",
     "insdate": "2019-08-16",
     "userName": "Gabi",
     "userEmail": "npm@gmail.com",
