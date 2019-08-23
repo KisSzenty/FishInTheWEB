@@ -1,26 +1,19 @@
 const fs = require('fs');
+const DB = require('./database');
 
 module.exports = class PostHandler {
   constructor(req, res) {
-    this.allData = '';
+    const reqParams = req.url.split('/');
 
-    req.on('data', (chunk) => {
-      this.allData += chunk;
-    });
 
-    req.on('end', () => {
-      this.allData = JSON.parse(this.allData);
-
-      fs.readFile('./json/users.json', 'utf8', (err, jsonString) => {
-        const users = JSON.parse(jsonString);
-        users.push(this.allData);
-
-        fs.writeFile('./json/users.json', JSON.stringify(users, null, 4), 'utf8', (err) => {
-          res.end('Köszi.');
-        });
-      });
-
-      console.log(this.allData);
-    });
+    const ordersDB = new DB(reqParams[1]);
+    const id = reqParams[2] || 0;
+    ordersDB.find(id).then(
+      data => res.end(JSON.stringify(data)),
+      (err) => {
+        res.statusCode = 404;
+        res.end(JSON.stringify(err));
+      },
+    );
   }
-}
+};

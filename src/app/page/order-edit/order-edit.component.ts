@@ -13,9 +13,9 @@ import { Product } from 'src/app/model/product';
 export class OrderEditComponent implements OnInit {
 
   order: Order = new Order();
+  product: Product = new Product();
   orderList: Order[] = [];
   productList: Product[] = [];
-  category: string = '';
 
 
   constructor(
@@ -30,9 +30,9 @@ export class OrderEditComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.productService.getAll().subscribe(
-    //   products => this.productList = products
-    // );
+    this.productService.getAll().subscribe(
+      products => this.productList = products
+    );
     this.orderService.getAll().subscribe(
       orders => {
         this.orderList = orders;
@@ -42,13 +42,16 @@ export class OrderEditComponent implements OnInit {
 
   onSubmit(ev: Event): void {
     ev.preventDefault();
-    this.onUpdate(this.order);
+    this.getOneProduct(this.order.product);
+    this.onUpdate();
   }
 
-  onUpdate(order: Order) {
-    this.orderService.update(order).subscribe(
+  onUpdate() {
+    this.order.category = this.product.category;
+    console.log(this.order);
+    this.orderService.update(this.order).subscribe(
       response => {
-        this.router.navigate(["../../admin/order"], { relativeTo: this.ar });
+        this.router.navigate(["../../order"], { relativeTo: this.ar });
       },
       err => console.error(err)
     )
@@ -63,15 +66,12 @@ export class OrderEditComponent implements OnInit {
     )
   }
 
-  // getCategory(orders: Order[], products: Product[], order: Order) {
-  //   let category = '';
-  //   for (let i = 0; i < orders.length; i++) {
-  //     for (let k = 0; k < products.length; k++) {
-  //       if (order[i].product == products[k].id) {
-  //         category = products[k].category;
-  //       }
-  //     }
-  //   }
-  //   return category;
-  // }
+  getOneProduct(id: number) {
+    for (let i = 0; i < this.productList.length; i++){
+      if (this.productList[i].id == id){
+        this.product = this.productList[i];
+      }
+    }
+    return this.product;
+  }
 }

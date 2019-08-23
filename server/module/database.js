@@ -22,7 +22,7 @@ module.exports = class DB {
       } else {
         this.getJsonArray().then(
           (dataArray) => {
-            const found = dataArray.filter(item => item.id == id)[0] || {};
+            const found = dataArray.filter(item => item.id === id)[0] || {};
             resolve(found);
           },
         );

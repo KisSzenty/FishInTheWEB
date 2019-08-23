@@ -4,7 +4,7 @@ const path = require('path');
 const PostHandler = require('./module/postHandler');
 
 const port = 3210;
-const GetHandler = require('./module/gethandler');
+const GetHandler = require('./module/getHandler');
 
 const server = http.createServer((req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');

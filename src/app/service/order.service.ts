@@ -14,18 +14,21 @@ export class OrderService {
   getAll(): Observable<any> {
     return this.http.get(this.apiUrl);
   }
+
   getOne(id: number): Observable<Order> {
-    return this.http.get<Order>(`${this.apiUrl}/${id}`)
+    return this.http.get<Order>(`${this.apiUrl}/${id}`);
   }
+
   create(order: Order): Observable<Order> {
-    return this.http.post<Order>(this.apiUrl, order)
+    return this.http.post<Order>(this.apiUrl, order);
   }
-  update(order: Order)
-    : Observable<Order> {
-    return this.http.put<Order>(`${this.apiUrl}/${order.id}`, order)
+
+  update(order: Order): Observable<Order> {
+    return this.http.put<Order>(`${this.apiUrl}/${order.id}`, order);
   }
+
   remove(id: number): Observable<Order> {
-    return this.http.delete<Order>(`${this.apiUrl}/${id}`)
+    return this.http.delete<Order>(`${this.apiUrl}/${id}`);
   }
 
 
