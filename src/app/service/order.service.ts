@@ -20,15 +20,27 @@ export class OrderService {
   }
 
   create(order: Order): Observable<Order> {
-    return this.http.post<Order>(this.apiUrl, order);
+    return this.http.post<Order>(this.apiUrl, order, {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      }
+    });
   }
 
   update(order: Order): Observable<Order> {
-    return this.http.put<Order>(`${this.apiUrl}/${order.id}`, order);
+    return this.http.put<Order>(`${this.apiUrl}/${order.id}`, order, {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      }
+    });
   }
 
   remove(id: number): Observable<Order> {
-    return this.http.delete<Order>(`${this.apiUrl}/${id}`);
+    return this.http.delete<Order>(`${this.apiUrl}/${id}`, {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      }
+    });
   }
 
 
