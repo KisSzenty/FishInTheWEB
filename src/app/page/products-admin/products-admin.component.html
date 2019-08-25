@@ -1,23 +1,47 @@
-<pre>{{list | json}}</pre>
+<div class="text-center">
+    <h1>Fish in the WEB - Admin page</h1>
+</div>
 <div class="container">
     <div class="row">
-        <div class="col-12">
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Price</th>
-                        <th>Category</th>
-                        <th>Image source</th>
-                        <th>Details</th>
-                        <th>Commands</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr></tr>
-                </tbody>
-            </table>
+        <div class="text-center col-12">
+            <a class="btn btn-info"
+               routerLink="/admin/products/add">Add new product</a>
+        </div>
+        <div class="text-center col-4 form-group offset-4">
+            <label for="filter">Filter:</label>
+            <input name="filter"
+                   type="text"
+                   class="form-control">
         </div>
     </div>
 </div>
+<table class="table table-hover table-fluid table-responsive text-center">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Category</th>
+
+            <th scope="col-2">Details</th>
+            <th scope="col">Commands</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of list">
+            <td scope="row">{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.price }}</td>
+            <td>{{ product.category }}</td>
+
+            <td>{{ product.details }}</td>
+            <td>
+                <div class="btn-group">
+                    <button class="btn btn-secondary"
+                            routerLink="/admin/edit/{{product.id}}">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

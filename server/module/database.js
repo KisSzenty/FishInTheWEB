@@ -30,6 +30,72 @@ module.exports = class DB {
     });
   }
 
+  saveNew(order) {
+    return new Promise((res, rej) => {
+      this.getJsonArray().then(
+        (dataArray) => {
+          this.getMaxId().then(
+            (maxId) => {
+              const newOrder = order;
+              newOrder.id = maxId + 1;
+              dataArray.push(newOrder);
+              const string = JSON.stringify(dataArray);
+              this.writeJsonArray(string);
+              res();
+            },
+          );
+        },
+      );
+    });
+  }
+
+  delete(id) {
+    return new Promise((res, rej) => {
+      this.getJsonArray().then(
+        (dataArray) => {
+          const ids = dataArray.map(item => item.id)
+          const index = ids.indexOf(parseInt(id));
+          console.log(index);
+          dataArray.splice(index, 1);
+          const string = JSON.stringify(dataArray);
+          this.writeJsonArray(string);
+          res();
+        },
+      );
+    });
+  }
+
+  edit(order) {
+    return new Promise((res, rej) => {
+      this.getJsonArray().then(
+        (dataArray) => {
+          const index = dataArray.map(item => item.id).indexOf(order.id);
+          dataArray[index] = order;
+          const string = JSON.stringify(dataArray);
+          this.writeJsonArray(string);
+          res();
+        },
+      );
+    });
+  }
+
+  getMaxId() {
+    return new Promise((res, rej) => {
+      this.getJsonArray().then(
+        (dataArray) => {
+          const ids = dataArray.map(item => item.id);
+          let maxId = Math.max(...ids);
+
+          if (maxId == null) {
+            maxId = 0;
+          }
+
+          res(maxId);
+        },
+      );
+    });
+  }
+
   getJsonArray() {
     return new Promise((resolve, reject) => {
       fs.readFile(this.jsonFilePath, 'utf8', (err, jsonString) => {
@@ -39,5 +105,9 @@ module.exports = class DB {
         resolve(JSON.parse(jsonString));
       });
     });
+  }
+
+  writeJsonArray(data) {
+    fs.writeFile(this.jsonFilePath, data, 'utf8', (err) => {});
   }
 };

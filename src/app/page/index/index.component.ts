@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../../service/product.service';
 import { Product } from 'src/app/model/product';
-import { Observable } from 'rxjs';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-index',
@@ -10,16 +9,33 @@ import { Observable } from 'rxjs';
 })
 export class IndexComponent implements OnInit {
 
-  list: Product[] = [];
-  // list$: Observable<any> = this.productService.getAll();
+  productList: Product[] = [];
+  productNumber: number = 0;
+  constructor(private productService: ProductService) {
 
-  constructor(private productService: ProductService) { }
-
-  ngOnInit() {
     this.productService.getAll().subscribe(
-      products => this.list = products,
+      products => {
+        this.productList = products;
+      },
+
       err => console.error(err)
     )
   }
 
+  ngOnInit() {
+    this.productService.getAll().subscribe(
+      products => this.productList = products,
+      err => console.error(err)
+    )
+  }
+
+  productNum(category) {
+    this.productNumber = 0;
+    for (let i = 0; i < this.productList.length; i += 1) {
+      if (this.productList[i].category == category) {
+        this.productNumber += 1;
+      }
+    }
+    return this.productNumber;
+  }
 }
