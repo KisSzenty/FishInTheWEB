@@ -1,13 +1,15 @@
+<h3 class="mt-5 text-success"><b>Orders</b></h3>
+
 <div class="row mt-5 mb-5">
   <div class="col-12">
-    <div class="card border-success">
+    <div class="card border-success bg-light">
       <div class="card-body">
         <div class="row mb-3">
           <div class="col-10">
-            <fa-icon [icon]="faShoppingCart" class="text-success"></fa-icon>
+            <fa-icon [icon]="faShoppingCart" class="text-success ml-5"></fa-icon>
           </div>
           <div class="col-2">
-            <h5 class="text-danger">{{ allOrders }} orders</h5>
+            <h5 class="text-success"><b>{{ allOrders }} orders</b></h5>
           </div>
         </div>
         <div class="progress">
@@ -54,7 +56,7 @@
   <tbody>
     <tr *ngFor="let order of list | search:phrase">
       <td>{{ order.id }}</td>
-      <td>{{ order.insdate }}</td>
+      <td>{{ order.date }}</td>
       <td>{{ order.product }}</td>
       <td>{{ order.category }}</td>
       <td>{{ order.userName }}</td>

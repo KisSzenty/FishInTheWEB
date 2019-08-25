@@ -53,7 +53,9 @@ module.exports = class DB {
     return new Promise((res, rej) => {
       this.getJsonArray().then(
         (dataArray) => {
-          const index = dataArray.map(item => item.id).indexOf(id);
+          const ids = dataArray.map(item => item.id)
+          const index = ids.indexOf(parseInt(id));
+          console.log(index);
           dataArray.splice(index, 1);
           const string = JSON.stringify(dataArray);
           this.writeJsonArray(string);

@@ -29,6 +29,7 @@ export class OrderAdminComponent implements OnInit {
   plantsP: number;
   toolsP: number;
   aquariumsP: number;
+  changeCounter: number = 0;
 
   constructor(
     private orderService: OrderService,
@@ -55,6 +56,7 @@ export class OrderAdminComponent implements OnInit {
         this.toolsP = this.percentage(orders, this.tools);
         this.plantsP = this.percentage(orders, this.plants);
         this.aquariumsP = this.percentage(orders, this.aquariums);
+        this.dateFormatter(orders);
       },
       err => console.error(err)
     )
@@ -86,11 +88,20 @@ export class OrderAdminComponent implements OnInit {
     if (confirm('Are you sure to delete this record?')) {
       this.orderService.remove(order.id).subscribe(
         response => {
+          console.log(order);
           let index = this.list.indexOf(order);
           this.list.splice(index, 1);
+          this.changeCounter++;
         },
         err => console.error(err)
       )
     }
+  }
+
+  dateFormatter(orders: Order[]){
+    for (let i = 0; i < orders.length; i++){
+      orders[i].date = orders[i].insdate.toString().substring(0, 10);
+    }
+    return orders;
   }
 }

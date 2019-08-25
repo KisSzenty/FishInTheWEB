@@ -7,4 +7,5 @@ export class Order {
     userEmail: string = '';
     shippingAddress: string = '';
     quantity: number = 1;
+    date?: string;
 }
