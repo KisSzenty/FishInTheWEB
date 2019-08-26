@@ -1,0 +1,10 @@
+.gradient {
+  background: linear-gradient(to bottom, #ffffff 0%, #113b57 100%);
+  z-index: -1;
+}
+
+.waterline {
+  width: 100%;
+  position: fixed;
+  z-index: -0.5;
+}
