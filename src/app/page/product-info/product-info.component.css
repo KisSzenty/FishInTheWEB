@@ -1,3 +1,11 @@
 .water {
-    width: 200px;
+  width: 200px;
+}
+
+#productImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
 }
