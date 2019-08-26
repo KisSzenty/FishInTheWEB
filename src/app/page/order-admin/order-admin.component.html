@@ -1,72 +1,73 @@
-<h3 class="mt-5 text-success"><b>Orders</b></h3>
 
-<div class="row mt-5 mb-5">
-  <div class="col-12">
-    <div class="card border-success bg-light">
-      <div class="card-body">
-        <div class="row mb-3">
-          <div class="col-10">
-            <fa-icon [icon]="faShoppingCart" class="text-success ml-5"></fa-icon>
+  <h3 class="mt-5 text-success"><b>Orders</b></h3>
+  
+  <div class="row mt-5 mb-5">
+    <div class="col-12">
+      <div class="card border-success bg-light">
+        <div class="card-body">
+          <div class="row mb-3">
+            <div class="col-10">
+              <fa-icon [icon]="faShoppingCart" class="text-success ml-5"></fa-icon>
+            </div>
+            <div class="col-2">
+              <h5 class="text-success"><b>{{ allOrders }} orders</b></h5>
+            </div>
           </div>
-          <div class="col-2">
-            <h5 class="text-success"><b>{{ allOrders }} orders</b></h5>
+          <div class="progress">
+            <div class="progress-bar bg-success" role="progressbar" [ngStyle]="{'width': fishesP + '%'}" aria-valuemin="0"
+              [attr.aria-valuemax]="allOrders">Fishes {{fishes}}</div>
+            <div class="progress-bar bg-primary" role="progressbar" [ngStyle]="{'width': coralsP + '%'}" aria-valuemin="0"
+              [attr.aria-valuemax]="allOrders">Corals {{corals}}</div>
+            <div class="progress-bar bg-info" role="progressbar" [ngStyle]="{'width': plantsP + '%'}" aria-valuemin="0"
+              [attr.aria-valuemax]="allOrders">Plants {{plants}}</div>
+            <div class="progress-bar bg-warning" role="progressbar" [ngStyle]="{'width': toolsP + '%'}" aria-valuemin="0"
+              [attr.aria-valuemax]="allOrders">Tools {{tools}}</div>
+            <div class="progress-bar bg-danger" role="progressbar" [ngStyle]="{'width': aquariumsP + '%'}"
+              aria-valuemin="0" [attr.aria-valuemax]="allOrders">Aquariums {{aquariums}}</div>
           </div>
-        </div>
-        <div class="progress">
-          <div class="progress-bar bg-success" role="progressbar" [ngStyle]="{'width': fishesP + '%'}" aria-valuemin="0"
-            [attr.aria-valuemax]="allOrders">Fishes {{fishes}}</div>
-          <div class="progress-bar bg-primary" role="progressbar" [ngStyle]="{'width': coralsP + '%'}" aria-valuemin="0"
-            [attr.aria-valuemax]="allOrders">Corals {{corals}}</div>
-          <div class="progress-bar bg-info" role="progressbar" [ngStyle]="{'width': plantsP + '%'}" aria-valuemin="0"
-            [attr.aria-valuemax]="allOrders">Plants {{plants}}</div>
-          <div class="progress-bar bg-warning" role="progressbar" [ngStyle]="{'width': toolsP + '%'}" aria-valuemin="0"
-            [attr.aria-valuemax]="allOrders">Tools {{tools}}</div>
-          <div class="progress-bar bg-danger" role="progressbar" [ngStyle]="{'width': aquariumsP + '%'}"
-            aria-valuemin="0" [attr.aria-valuemax]="allOrders">Aquariums {{aquariums}}</div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<div class="row mt-5 mb-5">
-  <div class="col-6">
-    <input id="search" type="text" class="form-control" placeholder="Search..." [(ngModel)]="phrase">
+  
+  <div class="row mt-5 mb-5">
+    <div class="col-6">
+      <input id="search" type="text" class="form-control" placeholder="Search..." [(ngModel)]="phrase">
+    </div>
+    <div class="col-3 offset-3">
+      <button class="btn btn-success btn-block" routerLink="/admin/order-add">ADD NEW ORDER</button>
+    </div>
   </div>
-  <div class="col-3 offset-3">
-    <button class="btn btn-success btn-block" routerLink="/admin/order-add">ADD NEW ORDER</button>
-  </div>
-</div>
-
-
-<table class="table table-primary table-hover">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Date</th>
-      <th>ProductID</th>
-      <th>Category</th>
-      <th>User name</th>
-      <th>User email</th>
-      <th>Shipping address</th>
-      <th>Quantity</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let order of list | search:phrase">
-      <td>{{ order.id }}</td>
-      <td>{{ order.date }}</td>
-      <td>{{ order.product }}</td>
-      <td>{{ order.category }}</td>
-      <td>{{ order.userName }}</td>
-      <td>{{ order.userEmail }}</td>
-      <td>{{ order.shippingAddress }}</td>
-      <td>{{ order.quantity }}</td>
-      <td class="">
-        <button class="btn btn-info" routerLink="/admin/order/{{order.id}}">Edit</button>
-        <button class="btn btn-warning ml-1" (click)="onDelete(order)">Delete</button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+  
+  
+  <table class="table table-primary table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Date</th>
+        <th>ProductID</th>
+        <th>Category</th>
+        <th>User name</th>
+        <th>User email</th>
+        <th>Shipping address</th>
+        <th>Quantity</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of list | search:phrase">
+        <td>{{ order.id }}</td>
+        <td>{{ order.date }}</td>
+        <td>{{ order.product }}</td>
+        <td>{{ order.category }}</td>
+        <td>{{ order.userName }}</td>
+        <td>{{ order.userEmail }}</td>
+        <td>{{ order.shippingAddress }}</td>
+        <td>{{ order.quantity }}</td>
+        <td class="">
+          <button class="btn btn-info" routerLink="/admin/order/{{order.id}}">Edit</button>
+          <button class="btn btn-warning ml-1" (click)="onDelete(order)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>

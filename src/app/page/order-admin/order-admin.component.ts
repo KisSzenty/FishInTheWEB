@@ -15,6 +15,7 @@ export class OrderAdminComponent implements OnInit {
 
   faShoppingCart = faShoppingCart;
 
+  
   list: Order[] = [];
   productList: Product[] = [];
   // list$: Observable<any> = this.orderService.getAll();

@@ -20,6 +20,29 @@ export class ProductService {
     return this.http.get<Product>(`${this.apiUrl}/${id}`);
   }
 
+  create(product: Product): Observable<Product> {
+    return this.http.post<Product>(this.apiUrl, product, {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      }
+    });
+  }
+
+  update(product: Product): Observable<Product> {
+    return this.http.put<Product>(`${this.apiUrl}/${product.id}`, product, {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      }
+    });
+  }
+
+  remove(id: number): Observable<Product> {
+    return this.http.delete<Product>(`${this.apiUrl}/${id}`, {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+      }
+    });
+  }
 
 
 }
