@@ -29,3 +29,7 @@ h2 {
 .cards {
   margin-bottom: 100px;
 }
+
+.d-block {
+  height: 400px;
+}

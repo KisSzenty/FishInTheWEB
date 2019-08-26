@@ -67,11 +67,15 @@ export class OrderEditComponent implements OnInit {
   }
 
   getOneProduct(id: number) {
-    for (let i = 0; i < this.productList.length; i++){
-      if (this.productList[i].id == id){
+    for (let i = 0; i < this.productList.length; i++) {
+      if (this.productList[i].id == id) {
         this.product = this.productList[i];
       }
     }
     return this.product;
+  }
+
+  onCancel() {
+    this.router.navigate(["../../order"], { relativeTo: this.ar });
   }
 }
