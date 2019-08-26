@@ -8,10 +8,15 @@
   background-color: #00ddee;
 }
 
+.card {
+  background-image: url("../../../assets/seamless-underwater-texture-sand-texture-5c745188eb0f7.png");
+}
 
 .carouselDiv {
   z-index: 0;
 }
-h1, h2 {
-    text-align: center;
+
+h1,
+h2 {
+  text-align: center;
 }

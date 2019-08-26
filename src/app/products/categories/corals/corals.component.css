@@ -1,5 +1,9 @@
 .card-img-top {
-    width: 100%;
-    height: 15vw;
-    object-fit: cover;
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+.card {
+  background-image: url("../../../../assets/seamless-underwater-texture-sand-texture-5c745188eb0f7.png");
 }
