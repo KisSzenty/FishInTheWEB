@@ -4,3 +4,11 @@ fa-icon {
 #navbarmargin {
   margin-left: 30;
 }
+
+body {
+  padding-top: 56px;
+}
+
+nav {
+  transition: all 0.5s;
+}
