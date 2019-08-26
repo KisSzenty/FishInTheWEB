@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { faFish } from '@fortawesome/free-solid-svg-icons';
 import { ProductService } from 'src/app/service/product.service';
 import { Product } from 'src/app/model/product';
@@ -10,6 +10,9 @@ import { Product } from 'src/app/model/product';
 })
 export class NavbarComponent implements OnInit {
   productList: Product[] = []
+
+  @Input() opacity: number = 1;
+
   faFish = faFish;
 
   constructor(
