@@ -89,7 +89,6 @@ export class OrderAdminComponent implements OnInit {
     if (confirm('Are you sure to delete this record?')) {
       this.orderService.remove(order.id).subscribe(
         response => {
-          console.log(order);
           let index = this.list.indexOf(order);
           this.list.splice(index, 1);
           this.changeCounter++;
