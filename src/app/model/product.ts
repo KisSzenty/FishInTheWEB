@@ -4,5 +4,7 @@ export class Product {
     price: number = 0;
     category: string = '';
     img: string = '';
+    img2: string = '';
     details: string = '';
+    reviews?: any[];
 }

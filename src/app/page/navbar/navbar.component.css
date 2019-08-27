@@ -19,7 +19,7 @@ fa-icon {
   box-sizing: border-box;
   background-image: url('https://img.icons8.com/android/50/000000/search.png');
   background-position: 14px 12px;
-  background-size: 20px 20px;
+  background-size:20px 20px;
   background-repeat: no-repeat;
   font-size: 16px;
   padding: 14px 20px 12px 45px;
@@ -67,6 +67,8 @@ body {
 
 nav {
   transition: all 0.5s;
+  position: fixed;
+  width: 100%;
 }
 
 .navbar {

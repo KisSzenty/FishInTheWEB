@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { Order } from 'src/app/model/order';
 import { ActivatedRoute } from '@angular/router';
 import { OrderService } from 'src/app/service/order.service';
@@ -13,9 +13,15 @@ import { Product } from 'src/app/model/product';
 })
 export class ProductInfoComponent implements OnInit {
 
-  product;
+  product: Product;
   productList: Product[] = [];
   orderList: Order[] = [];
+  newReview: any = {
+    text: '',
+    rate: '',
+    from: ''
+  };
+
 
   showImage() {
     let curImage = document.getElementById('currentImg');
@@ -41,6 +47,7 @@ export class ProductInfoComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.inputName = this.itemId + '_rating';
   }
 
   getOneProduct(id: number) {
@@ -51,5 +58,34 @@ export class ProductInfoComponent implements OnInit {
     )
   }
 
+  showReview() {
+    document.getElementById("review").classList.toggle("show");
+  }
 
+
+  leaveReview() {
+    this.product.reviews.push(this.newReview);
+    this.productService.update(this.product).subscribe(
+      response => {
+
+      },
+      err => console.error(err)
+    )
+  }
+
+
+  rating: number;
+  itemId: number;
+  ratingClick: EventEmitter<any> = new EventEmitter<any>();
+
+  inputName: any;
+
+  onClick(rating: number): void {
+    this.newReview.rate = rating;
+    this.rating = rating;
+    this.ratingClick.emit({
+      itemId: this.itemId,
+      rating: rating
+    });
+  }
 }
