@@ -30,6 +30,7 @@ import { AquariumsComponent } from './products/categories/aquariums/aquariums.co
 import { ProductInfoComponent } from './page/product-info/product-info.component';
 import { SearchPipe } from './pipe/search.pipe';
 import { ConfirmComponent } from './page/confirm/confirm.component';
+import { FooterComponent } from './page/footer/footer.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { ConfirmComponent } from './page/confirm/confirm.component';
     AquariumsComponent,
     ProductInfoComponent,
     SearchPipe,
-    ConfirmComponent
+    ConfirmComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

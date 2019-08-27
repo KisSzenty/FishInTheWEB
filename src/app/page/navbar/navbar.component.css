@@ -1,6 +1,9 @@
 fa-icon {
   font-size: 30px;
+
 }
+
+
 
 #navbarmargin {
   margin-left: 30;
@@ -51,16 +54,29 @@ fa-icon {
 }
 
 .dropdown a:hover {
-  background-color: #ddd;
+  background-color: 53a7ea;
 }
 
 .show {
   display: block;
 }
+
 body {
   padding-top: 56px;
 }
 
 nav {
   transition: all 0.5s;
+}
+
+.navbar {
+  background-color: skyblue;
+
+}
+
+li:hover {
+  transition: all 0.9s;
+  background: #53a7ea;
+  border-radius: 8px;
+
 }

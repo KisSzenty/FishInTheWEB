@@ -1,6 +1,7 @@
 .card {display:inline-block;}
 .card-img-top {
     width: 100%;
+    min-height: 200px;
     height: 15vw;
     object-fit: cover;
 }

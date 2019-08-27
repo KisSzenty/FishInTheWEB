@@ -1,4 +1,4 @@
-<nav [ngStyle]="{'opacity': opacity}" class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
+<nav [ngStyle]="{'opacity': opacity}" class="navbar navbar-expand-sm navbar-light bg-blue sticky-top">
   <a class="navbar-brand" routerLink="/">
     <fa-icon [icon]="faFish" style="color:darkblue"></fa-icon>
   </a>
@@ -30,7 +30,7 @@
     </ul>
 
     <div class="dropdown">
-      <button (click)="myFunction()" class=" btn btn-secondary">Search</button>
+      <button (click)="myFunction()" class=" btn btn-info">Search</button>
       <div id="myDropdown" class="dropdown-content">
         <input type="text" placeholder="Search..." id="myInput" [(ngModel)]="phrase" class="form-control">
         <a *ngFor="let product of productList| search:phrase" (click)="myFunction()"
