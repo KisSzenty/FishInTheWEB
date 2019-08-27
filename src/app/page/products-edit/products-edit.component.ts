@@ -23,18 +23,15 @@ export class ProductsEditComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-    this.productService.getAll().subscribe(
-      products => this.productList = products
-    );
-  }
+  ngOnInit() { }
+
   getOneProduct(id: number) {
-    for (let i = 0; i < this.productList.length; i++) {
-      if (this.productList[i].id == id) {
-        this.product = this.productList[i];
-      }
-    }
-    return this.product;
+    this.productService.getOne(id).subscribe(
+      result => {
+        this.product = result;
+      },
+      err => console.error(err)
+    )
   }
 
 }
