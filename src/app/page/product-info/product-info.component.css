@@ -2,7 +2,7 @@
   width: 200px;
 }
 
-#productImage {
+#currentImage {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -12,4 +12,20 @@
 
 .product-background {
     opacity: 0.75;
+}
+
+.picker {
+    list-style-type:none;
+}
+
+.picker li {
+    float: left;
+    list-style-type:none;
+    text-align: center;
+}
+
+.picker li img {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
 }

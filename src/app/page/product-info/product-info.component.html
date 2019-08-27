@@ -1,66 +1,81 @@
 <div class="container">
 
-    <div class="row">
+  <div class="row">
 
-      
-      <!-- /.col-lg-3 -->
 
-      <div class="col-lg-12">
-          <h1 class="my-4 text-center">{{product.name}}</h1>
+    <!-- /.col-lg-3 -->
 
-        <div class="card mt-4 ">
-          <br>
-          <img class="card-img-top img-fluid" id="productImage" src="{{product.img}}" alt="">
-          <div class="card-body">
-            <h3 class="card-title">{{product.name}}</h3>
-            <h4>${{product.price}}</h4>
-            <p class="card-text">{{product.details}}</p>
-            <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-            4.0 stars
+    <div class="col-lg-12">
+      <h1 class="my-4 text-center">{{product.name}}</h1>
+
+      <div class="card mt-4">
+        <div class="row">
+          <div class="col-2 mt-5">
+            <ul class="picker mt-5">
+              <li class="mt-5 mb-2"><img src="{{product.img}}" (click)="showImage2();" data-pin-nopin="true"></li>
+              <li><img src="{{product.img2}}" (click)="showImage();" data-pin-nopin="true"></li>
+            </ul>
           </div>
-          
-          <div class="row">
-              <div class="col-12 text-center">
-                <button class="btn btn-info mt-5" routerLink="/order/{{product.id}}">Order</button>
-              </div>
-            </div>
-            <br>
-        </div>
-        <!-- /.card -->
-
-        <div class=" product-background card card-outline-secondary my-4">
-          <div class="card-header">
-            Product Reviews
-          </div>
-          <div class="card-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
-            <small class="text-muted">Posted by Anonymous on 3/1/17</small>
-            <hr>
-            <div class="col-12 text-center">
-              <button href="#" class="btn btn-info" >Leave a Review</button></div>
+          <div class="col-10">
+            <img class="card-img-top img-fluid" id="currentImg" alt="productImg" src="{{product.img}}">
           </div>
         </div>
-        <!-- /.card -->
-
+      <div class="card-body">
+        <h3 class="card-title">{{product.name}}</h3>
+        <h4>${{product.price}}</h4>
+        <p class="card-text">{{product.details}}</p>
+        <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
+        4.0 stars
       </div>
-      <!-- /.col-lg-9 -->
-      <div class="col-lg-3">
-        <img src="../../../assets/Water-Drops-PNG-File.png" alt="water" class="water">
-      </div>
 
+      <div class="row">
+        <div class="col-12 text-center">
+          <button class="btn btn-info mt-5" routerLink="/order/{{product.id}}">Order</button>
+        </div>
+      </div>
+      <br>
     </div>
+    </div>
+  <!-- /.card -->
 
+  <div class=" product-background card card-outline-secondary my-4">
+    <div class="card-header">
+      Product Reviews
+    </div>
+    <div class="card-body">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique
+        necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia,
+        necessitatibus quae sint natus.</p>
+      <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+      <hr>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique
+        necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia,
+        necessitatibus quae sint natus.</p>
+      <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+      <hr>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique
+        necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia,
+        necessitatibus quae sint natus.</p>
+      <small class="text-muted">Posted by Anonymous on 3/1/17</small>
+      <hr>
+      <div class="col-12 text-center">
+        <button href="#" class="btn btn-info">Leave a Review</button></div>
+    </div>
   </div>
-  <!-- /.container -->
+  <!-- /.card -->
+
+</div>
+<!-- /.col-lg-9 -->
+<div class="col-lg-3">
+  <img src="../../../assets/Water-Drops-PNG-File.png" alt="water" class="water">
+</div>
+
+</div>
+
+<!-- /.container -->
 
 
-  
+
 
 
 <!-- 

@@ -16,6 +16,17 @@ export class ProductInfoComponent implements OnInit {
   product;
   productList: Product[] = [];
   orderList: Order[] = [];
+
+  showImage() {
+    let curImage = document.getElementById('currentImg');
+
+    curImage.setAttribute('src', this.product.img2);
+  }
+  showImage2() {
+    let curImage = document.getElementById('currentImg');
+
+    curImage.setAttribute('src', this.product.img);
+  }
   constructor(
     private ar: ActivatedRoute,
     private productService: ProductService,
