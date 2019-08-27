@@ -5,4 +5,5 @@ export class Product {
     category: string = '';
     img: string = '';
     details: string = '';
+    reviews?: any[];
 }
