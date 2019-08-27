@@ -46,8 +46,8 @@
         <div class="card-body" *ngFor="let review of product.reviews">
           <p>{{ review.text }}</p>
           <div class="row">
-            <div class="col-6"><small class="text-muted">Posted by: {{ review.from }}</small></div>
-            <div class="col-6"><small class="text-muted">{{ review.point }}</small></div>
+            <div class="col-2"><small class="text-muted">Posted by: {{ review.from }}</small></div>
+            <div class="col-1"><small class="text-muted">{{ review.rate }}★</small></div>
           </div>
           <hr>
         </div>
@@ -65,23 +65,23 @@
             <textarea class="form-control" name="text" [(ngModel)]="newReview.text"
               placeholder="Write something..."></textarea>
 
-            
-              <fieldset class="rating">
-                <input type="radio" [name]="inputName" value="5" [checked]="rating===5" />
-                <label title="Rocks!" (click)='onClick(5)'>5 stars</label>
 
-                <input type="radio" [name]="inputName" value="4" [checked]="rating===4" />
-                <label title="Pretty good" (click)='onClick(4)'>4 stars</label>
+            <fieldset class="rating">
+              <input type="radio" [name]="inputName" value="5" [checked]="rating===5" />
+              <label title="Rocks!" (click)='onClick(5)'>5 stars</label>
 
-                <input type="radio" [name]="inputName" value="3" [checked]="rating===3" />
-                <label title="Meh" (click)='onClick(3)'>3 stars</label>
+              <input type="radio" [name]="inputName" value="4" [checked]="rating===4" />
+              <label title="Pretty good" (click)='onClick(4)'>4 stars</label>
 
-                <input type="radio" [name]="inputName" value="2" [checked]="rating===2" />
-                <label title="Kinda bad" (click)='onClick(2)'>2 stars</label>
+              <input type="radio" [name]="inputName" value="3" [checked]="rating===3" />
+              <label title="Meh" (click)='onClick(3)'>3 stars</label>
 
-                <input type="radio" [name]="inputName" value="1" [checked]="rating===1" />
-                <label title="Sucks big time" (click)='onClick(1)'>1 star</label>
-              </fieldset>
+              <input type="radio" [name]="inputName" value="2" [checked]="rating===2" />
+              <label title="Kinda bad" (click)='onClick(2)'>2 stars</label>
+
+              <input type="radio" [name]="inputName" value="1" [checked]="rating===1"  />
+              <label title="Sucks big time" (click)='onClick(1)'>1 star</label>
+            </fieldset>
             <br>
             <input type="text" name="from" class="form-control" [(ngModel)]="newReview.from" placeholder="Your name...">
           </div>

@@ -16,7 +16,11 @@ export class ProductInfoComponent implements OnInit {
   product: Product;
   productList: Product[] = [];
   orderList: Order[] = [];
-  newReview: Object = {};
+  newReview: any = {
+    text: '',
+    rate: '',
+    from: ''
+  };
 
 
   showImage() {
@@ -77,8 +81,7 @@ export class ProductInfoComponent implements OnInit {
   inputName: any;
 
   onClick(rating: number): void {
-    let rate = document.
-    console.log(rate);
+    this.newReview.rate = rating;
     this.rating = rating;
     this.ratingClick.emit({
       itemId: this.itemId,
