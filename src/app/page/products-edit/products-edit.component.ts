@@ -11,7 +11,6 @@ import { Product } from 'src/app/model/product';
 export class ProductsEditComponent implements OnInit {
 
   product: Product = new Product();
-  productList: Product[] = [];
 
   constructor(
     private router: Router,
@@ -23,15 +22,29 @@ export class ProductsEditComponent implements OnInit {
     });
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
   getOneProduct(id: number) {
     this.productService.getOne(id).subscribe(
       result => {
         this.product = result;
+
       },
       err => console.error(err)
     )
+  }
+
+  onSave() {
+    this.productService.update(this.product).subscribe(
+      response => {
+        this.router.navigate(["admin/products"]);
+      },
+      err => console.error(err)
+    )
+  }
+  onReset() {
+    this.getOneProduct(this.product.id);
   }
 
 }
