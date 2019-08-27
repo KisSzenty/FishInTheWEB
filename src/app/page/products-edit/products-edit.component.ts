@@ -46,5 +46,12 @@ export class ProductsEditComponent implements OnInit {
   onReset() {
     this.getOneProduct(this.product.id);
   }
-
+  onDelete() {
+    this.productService.remove(this.product.id).subscribe(
+      response => {
+        this.router.navigate(["admin/products"]);
+      },
+      err => console.error(err)
+    )
+  }
 }

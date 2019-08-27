@@ -12,7 +12,6 @@ import { OrderService } from 'src/app/service/order.service';
 export class ProductsAddComponent implements OnInit {
 
   newProduct: Product = new Product();
-  product: Product = new Product();
   productList: Product[] = [];
 
   constructor(
@@ -21,27 +20,38 @@ export class ProductsAddComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit() {
+  ngOnInit() { }
 
-    this.productService.getAll().subscribe(
-      products => {
-        this.productList = products;
-      }
-    )
-  }
-
-  getOneProduct(id: number) {
-    for (let i = 0; i < this.productList.length; i++) {
-      if (this.productList[i].id == id) {
-        this.product = this.productList[i];
-      }
-    }
-    return this.product;
-  }
 
   onCancel() {
-    this.router.navigate(["../products"], { relativeTo: this.ar });
+    this.router.navigate(["/admin/products"]);
   }
+  onCreate(): void {
+
+    this.newProduct.id = this.findNextID();
+    this.productService.create(this.newProduct).subscribe(
+      response => {
+        this.router.navigate(["/admin/products"]);
+
+      },
+      err => console.error(err)
+    )
+  }
+  findNextID(): number {
+    let greatestID = 1;
+    this.productService.getAll().subscribe(
+      productList => {
+        this.productList = productList;
+        for (let i = 0; i < this.productList.length; i += 1) {
+          if (this.productList[i].id > greatestID) {
+            greatestID = this.productList[i].id;
+          }
+        }
+      }
+    )
+    return greatestID + 1;
+  }
+
 }
 
 

@@ -42,14 +42,16 @@
                        type="text"
                        [(ngModel)]="product.img">
                 <div>&nbsp;</div>
-                <div class="col-12 text-center">
+                <div class="col-12 text-center btn-group">
                     <button (click)="onSave()"
-                            class="btn btn-info">Save</button>
+                            class="btn btn-success">Save</button>
                 </div>
                 <div>&nbsp;</div>
-                <div class="col-12 text-center">
+                <div class="col-12 text-center btn-group">
                     <button (click)="onReset()"
-                            class="btn btn-danger">Reset</button>
+                            class="btn btn-warning">Reset</button>
+                    <button class="btn btn-danger"
+                            (click)="onDelete()">Delete</button>
                 </div>
 
             </form>
