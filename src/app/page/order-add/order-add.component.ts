@@ -45,9 +45,8 @@ export class OrderAddComponent implements OnInit {
   }
 
   onAdd() {
-      this.newOrder.category = this.product.category,
-      console.log(this.newOrder)
-    this.orderService.create(this.newOrder).subscribe(
+      this.newOrder.category = this.product.category;
+      this.orderService.create(this.newOrder).subscribe(
       order => {
         this.orderList.push(order);
         this.router.navigate(["../order"], { relativeTo: this.ar });
