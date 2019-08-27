@@ -11,7 +11,9 @@
             <label for="filter">Filter:</label>
             <input name="filter"
                    type="text"
-                   class="form-control">
+                   class="form-control"
+                   [(ngModel)]="phrase"
+                   placeholder="Search">
         </div>
     </div>
 </div>
@@ -28,7 +30,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let product of list">
+        <tr *ngFor="let product of list | search:phrase:changeCounter">
             <td scope="row">{{ product.id }}</td>
             <td>{{ product.name }}</td>
             <td>{{ product.price }}</td>

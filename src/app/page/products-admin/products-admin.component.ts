@@ -10,6 +10,8 @@ import { from } from 'rxjs';
 export class ProductsAdminComponent implements OnInit {
 
   list: Product[] = [];
+  productList: Product[] = [];
+  changeCounter: number = 0;
 
   constructor(private productService: ProductService) { }
 
