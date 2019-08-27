@@ -55,7 +55,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let order of list | search:phrase">
+      <tr *ngFor="let order of list | search:phrase:changeCounter">
         <td>{{ order.id }}</td>
         <td>{{ order.date }}</td>
         <td>{{ order.product }}</td>

@@ -63,4 +63,8 @@ export class OrderAddComponent implements OnInit {
     }
     return this.product;
   }
+
+  onCancel() {
+    this.router.navigate(["../order"], { relativeTo: this.ar });
+  }
 }

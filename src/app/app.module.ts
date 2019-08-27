@@ -4,6 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from './material/material.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 import { AppComponent } from './app.component';
@@ -27,6 +29,7 @@ import { ToolsComponent } from './products/categories/tools/tools.component';
 import { AquariumsComponent } from './products/categories/aquariums/aquariums.component';
 import { ProductInfoComponent } from './page/product-info/product-info.component';
 import { SearchPipe } from './pipe/search.pipe';
+import { ConfirmComponent } from './page/confirm/confirm.component';
 
 
 @NgModule({
@@ -49,17 +52,21 @@ import { SearchPipe } from './pipe/search.pipe';
     ToolsComponent,
     AquariumsComponent,
     ProductInfoComponent,
-    SearchPipe
+    SearchPipe,
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ConfirmComponent]
 })
 export class AppModule {
   constructor() {

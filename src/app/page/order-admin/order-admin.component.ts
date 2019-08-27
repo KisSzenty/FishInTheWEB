@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { faShoppingCart, faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { ProductService } from 'src/app/service/product.service';
 import { Product } from 'src/app/model/product';
+import { DialogService } from '../../service/dialog.service';
 
 @Component({
   selector: 'app-order-admin',
@@ -34,7 +35,8 @@ export class OrderAdminComponent implements OnInit {
 
   constructor(
     private orderService: OrderService,
-    private productService: ProductService
+    private productService: ProductService,
+    private dialogService: DialogService
   ) { }
 
   ngOnInit() {
@@ -86,16 +88,30 @@ export class OrderAdminComponent implements OnInit {
 
 
   onDelete(order: Order) {
-    if (confirm('Are you sure to delete this record?')) {
-      this.orderService.remove(order.id).subscribe(
-        response => {
-          let index = this.list.indexOf(order);
-          this.list.splice(index, 1);
-          this.changeCounter++;
-        },
-        err => console.error(err)
-      )
-    }
+    // if (confirm('Are you sure to delete this record?')) {
+    //   this.orderService.remove(order.id).subscribe(
+    //     response => {
+    //       let index = this.list.indexOf(order);
+    //       this.list.splice(index, 1);
+    //       this.changeCounter++;
+    //     },
+    //     err => console.error(err)
+    //   )
+    // }
+
+    this.dialogService.openConfirmDialog().afterClosed().subscribe(res => {
+      if (res) {
+        this.orderService.remove(order.id).subscribe(
+          response => {
+            let index = this.list.indexOf(order);
+            this.list.splice(index, 1);
+            this.changeCounter++;
+          },
+          err => console.error(err)
+        )
+      }
+    });
+
   }
 
   dateFormatter(orders: Order[]){
