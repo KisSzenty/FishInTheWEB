@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/service/product.service';
 import { Product } from 'src/app/model/product';
-
+import { DialogService } from '../../service/dialog.service';
 @Component({
   selector: 'app-products-edit',
   templateUrl: './products-edit.component.html',
@@ -15,7 +15,8 @@ export class ProductsEditComponent implements OnInit {
   constructor(
     private router: Router,
     private ar: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private dialogService: DialogService
   ) {
     this.ar.params.forEach(params => {
       this.getOneProduct(params.id);
@@ -47,11 +48,16 @@ export class ProductsEditComponent implements OnInit {
     this.getOneProduct(this.product.id);
   }
   onDelete() {
-    this.productService.remove(this.product.id).subscribe(
-      response => {
-        this.router.navigate(["admin/products"]);
-      },
-      err => console.error(err)
+    this.dialogService.openConfirmDialog().afterClosed().subscribe(res => {
+      if (res) {
+        this.productService.remove(this.product.id).subscribe(
+          response => {
+            this.router.navigate(["admin/products"]);
+          },
+          err => console.error(err)
+        )
+      }
+    }
     )
   }
 }
