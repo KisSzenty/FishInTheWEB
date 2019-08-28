@@ -20,17 +20,22 @@
 <table class="table table-hover table-fluid table-responsive text-center">
     <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Category</th>
+            <th scope="col"
+                (click)="setSorterKey('id')">#</th>
+            <th scope="col"
+                (click)="setSorterKey('name')">Name</th>
+            <th scope="col"
+                (click)="setSorterKey('price')">Price</th>
+            <th scope="col"
+                (click)="setSorterKey('category')">Category</th>
 
-            <th scope="col-2">Details</th>
+            <th scope="col-2"
+                (click)="setSorterKey('details')">Details</th>
             <th scope="col">Commands</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let product of list | search:phrase:changeCounter">
+        <tr *ngFor="let product of list | search:phrase:changeCounter | sorter:orderKey:orderDirection:changeCounter">
             <td scope="row">{{ product.id }}</td>
             <td>{{ product.name }}</td>
             <td>{{ product.price }}</td>
