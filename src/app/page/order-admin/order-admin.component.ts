@@ -31,6 +31,8 @@ export class OrderAdminComponent implements OnInit {
   toolsP: number;
   aquariumsP: number;
   changeCounter: number = 0;
+  orderKey: string = '';
+  orderDirection: number = 1;
 
   constructor(
     private orderService: OrderService,
@@ -118,5 +120,14 @@ export class OrderAdminComponent implements OnInit {
       orders[i].date = orders[i].insdate.toString().substring(0, 10);
     }
     return orders;
+  }
+
+  setSorterKey(key: string): void {
+    if (key === this.orderKey) {
+      this.orderDirection = this.orderDirection === 1 ? -1 : 1;
+    } else {
+      this.orderDirection = 1;
+    }
+    this.orderKey = key;
   }
 }

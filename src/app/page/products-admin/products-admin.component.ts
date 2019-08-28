@@ -22,6 +22,7 @@ export class ProductsAdminComponent implements OnInit {
       orders => this.list = orders,
       err => console.error(err))
   }
+  
   setSorterKey(key: string): void {
     if (key === this.orderKey) {
       this.orderDirection = this.orderDirection === 1 ? -1 : 1;
