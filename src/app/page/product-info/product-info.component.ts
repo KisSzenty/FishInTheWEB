@@ -21,6 +21,7 @@ export class ProductInfoComponent implements OnInit {
     rate: '',
     from: ''
   };
+  avg: number = 0;
 
 
   showImage() {
@@ -41,7 +42,8 @@ export class ProductInfoComponent implements OnInit {
     this.ar.params.forEach(
       params => {
         this.getOneProduct(params.id)
-        console.log(this.product)
+        console.log(this.product);
+
       }
     );
   }
@@ -54,11 +56,16 @@ export class ProductInfoComponent implements OnInit {
     this.productService.getOne(id).subscribe(
       product => {
         this.product = product;
+        this.avg = this.countAvg(product);
       },
     )
   }
 
   showReview() {
+    document.getElementById("review").classList.toggle("show");
+  }
+
+  onCancel() {
     document.getElementById("review").classList.toggle("show");
   }
 
@@ -77,6 +84,7 @@ export class ProductInfoComponent implements OnInit {
         Array.prototype.forEach.call(nList, function (checkbox) {
           checkbox.checked = false;
         });
+        this.avg = this.countAvg(this.product);
       },
       err => console.error(err)
     )
@@ -96,5 +104,26 @@ export class ProductInfoComponent implements OnInit {
       itemId: this.itemId,
       rating: rating
     });
+  }
+
+  countAvg(product) {
+    let avg: number;
+    let sum: number =0;
+    let count: number =0;
+    let nums = product.reviews.map(item => {
+      return item.rate
+    });
+    console.log(nums);
+    for (let i = 0; i < nums.length; i++) {
+      console.log(parseInt(nums[i]));
+      let num = parseInt(nums[i]);
+      console.log(num);
+      sum += num;
+      console.log(sum);
+      count += 1;
+    }
+    avg = sum / count;
+    console.log(avg);
+    return avg;
   }
 }
