@@ -13,8 +13,8 @@ export class DialogService {
 
   openConfirmDialog() {
     return this.dialog.open(ConfirmComponent, {
-      width: '400px',
-      height: '130px',
+      width: '35vw',
+      height: '51vh',
       disableClose: true
     });
   }

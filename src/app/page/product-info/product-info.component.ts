@@ -108,22 +108,21 @@ export class ProductInfoComponent implements OnInit {
 
   countAvg(product) {
     let avg: number;
-    let sum: number =0;
-    let count: number =0;
+    let sum: number = 0;
+    let count: number = 0;
     let nums = product.reviews.map(item => {
       return item.rate
     });
-    console.log(nums);
-    for (let i = 0; i < nums.length; i++) {
-      console.log(parseInt(nums[i]));
-      let num = parseInt(nums[i]);
-      console.log(num);
-      sum += num;
-      console.log(sum);
-      count += 1;
+    if (nums[0] == undefined) {
+      avg = 0;
+    } else {
+      for (let i = 0; i < nums.length; i++) {
+        let num = parseInt(nums[i]);
+        sum += num;
+        count += 1;
+      }
+      avg = sum / count;
     }
-    avg = sum / count;
-    console.log(avg);
     return avg;
   }
 }

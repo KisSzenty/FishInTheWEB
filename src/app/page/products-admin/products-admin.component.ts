@@ -11,6 +11,8 @@ export class ProductsAdminComponent implements OnInit {
 
   list: Product[] = [];
   productList: Product[] = [];
+  orderKey: string = '';
+  orderDirection: number = 1;
   changeCounter: number = 0;
 
   constructor(private productService: ProductService) { }
@@ -19,6 +21,15 @@ export class ProductsAdminComponent implements OnInit {
     this.productService.getAll().subscribe(
       orders => this.list = orders,
       err => console.error(err))
+  }
+  
+  setSorterKey(key: string): void {
+    if (key === this.orderKey) {
+      this.orderDirection = this.orderDirection === 1 ? -1 : 1;
+    } else {
+      this.orderDirection = 1;
+    }
+    this.orderKey = key;
   }
 
 }
