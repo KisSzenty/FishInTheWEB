@@ -35,8 +35,8 @@
           </label>
           <input type="number" name="quantity" class="form-control" [(ngModel)]="order.quantity">
         </div>
-        <button class="btn col-2 offset-7 btn-secondary">CANCEL</button>
-        <button class="btn col-2 offset-1 btn-success" (click)="onCancel()">SAVE</button>
+        <button class="btn col-2 offset-7 btn-secondary" (click)="onCancel()">CANCEL</button>
+        <button class="btn col-2 offset-1 btn-success" (click)="onAdd()">SAVE</button>
       </form>
     </div>
   </div>
