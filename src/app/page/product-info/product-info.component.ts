@@ -67,7 +67,16 @@ export class ProductInfoComponent implements OnInit {
     this.product.reviews.push(this.newReview);
     this.productService.update(this.product).subscribe(
       response => {
-
+        document.getElementById("review").classList.toggle("show");
+        this.newReview = {};
+        let nList = document.querySelectorAll("input[type=radio]");
+        console.log(nList);
+        // for (var checkbox of nList) {
+        //   checkbox.checked = false;
+        // };
+        Array.prototype.forEach.call(nList, function (checkbox) {
+          checkbox.checked = false;
+        });
       },
       err => console.error(err)
     )
