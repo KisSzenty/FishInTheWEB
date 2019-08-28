@@ -11,10 +11,10 @@ export class DialogService {
     private dialog: MatDialog
   ) { }
 
-  openConfirmDialog(){
+  openConfirmDialog() {
     return this.dialog.open(ConfirmComponent, {
-      // width: "300px",
-      // height: "200px",
+      width: '400px',
+      height: '130px',
       disableClose: true
     });
   }

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../../service/order.service';
 import { Order } from 'src/app/model/order';
-import { Observable } from 'rxjs';
 import { faShoppingCart, faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { ProductService } from 'src/app/service/product.service';
 import { Product } from 'src/app/model/product';

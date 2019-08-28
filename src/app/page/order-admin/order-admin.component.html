@@ -38,42 +38,41 @@
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-<table class="table table-primary table-responsive table-hover">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Date</th>
-      <th>ProductID</th>
-      <th>Category</th>
-      <th>User name</th>
-      <th>User email</th>
-      <th>Shipping address</th>
-      <th>Quantity</th>
-      <th>&nbsp;</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let order of list | search:phrase:changeCounter">
-      <td>{{ order.id }}</td>
-      <td>{{ order.date }}</td>
-      <td>{{ order.product }}</td>
-      <td>{{ order.category }}</td>
-      <td>{{ order.userName }}</td>
-      <td>{{ order.userEmail }}</td>
-      <td>{{ order.shippingAddress }}</td>
-      <td>{{ order.quantity }}</td>
-      <td>
-        <div class="btn-group">
-          <button class="btn btn-info" routerLink="/admin/order/{{order.id}}">Edit</button>
-          <button class="btn btn-warning ml-1" (click)="onDelete(order)">Delete</button>
-        </div>
-      </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-</div>
+
+<div class="row">
+  <div class="col-12">
+    <table class="table table-primary table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Date</th>
+          <th>ProductID</th>
+          <th>Category</th>
+          <th>User name</th>
+          <th>User email</th>
+          <th>Shipping address</th>
+          <th>Quantity</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of list | search:phrase:changeCounter">
+          <td>{{ order.id }}</td>
+          <td>{{ order.date }}</td>
+          <td>{{ order.product }}</td>
+          <td>{{ order.category }}</td>
+          <td>{{ order.userName }}</td>
+          <td>{{ order.userEmail }}</td>
+          <td>{{ order.shippingAddress }}</td>
+          <td>{{ order.quantity }}</td>
+          <td>
+            <div class="btn-group">
+              <button class="btn btn-info" routerLink="/admin/order/{{order.id}}">Edit</button>
+              <button class="btn btn-warning ml-1" (click)="onDelete(order)">Delete</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
